@@ -1,0 +1,62 @@
+﻿@model CRUD_MVC_OgrenciKayit.Models.Table
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Html.DisplayFor(model => model.OGRAD) Adlı Öğrenci Detayları</h2>
+<div style="margin-left:130px;">
+    <dt>
+        <img src="@Model.OGRFOTOGRAF" width="100" height="100" alt="Öğrenci Fotoğrafı"/>
+    </dt>
+</div>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OGRAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OGRAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OGRSOYAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OGRSOYAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OGRMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OGRMAIL)
+        </dd>
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.OGRFOTOGRAF)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OGRFOTOGRAF)
+            </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OGRADRES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OGRADRES)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.OGRID }) |
+    @Html.ActionLink("Öğrenci Listesine Dön", "Index")
+</p>
+

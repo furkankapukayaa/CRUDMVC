@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CRUD_MVC_OgrenciKayit.Models.Table>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Öğrenci Listesi</h2>
+
+<p>
+    @Html.ActionLink("Yeni Öğrenci Ekle", "Create", new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OGRAD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OGRSOYAD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OGRMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OGRADRES)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OGRAD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OGRSOYAD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OGRMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OGRADRES)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.OGRID }, new { @class="btn btn-primary" }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.OGRID }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.OGRID }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
